@@ -17,7 +17,7 @@ namespace PPPP
             InitializeComponent();
 
 
-            //guapo preciosote
+            //Compr
         }
     }
 }
