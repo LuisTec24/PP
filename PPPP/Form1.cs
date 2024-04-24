@@ -19,5 +19,17 @@ namespace PPPP
 
             //Como
         }
+
+        private void sdasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
