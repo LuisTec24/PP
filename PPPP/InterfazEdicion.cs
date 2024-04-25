@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PPPP
 {
-    public partial class Form1 : Form
+    public partial class InterfazEdicion : Form
     {
-        public Form1()
+        public InterfazEdicion()
         {
             InitializeComponent();
 
@@ -23,6 +23,16 @@ namespace PPPP
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
