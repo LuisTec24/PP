@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfazPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazPrincipal.Designer.cs">
+      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
