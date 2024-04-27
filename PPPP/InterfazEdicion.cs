@@ -19,7 +19,6 @@ namespace PPPP
 
             //Como
             // SIUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-            dknfkdnfd
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -49,7 +48,19 @@ namespace PPPP
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-         
+
+            InterfazPrincipal interfazPrincipal=new InterfazPrincipal();
+
+            // Mostrar el nuevo formulario
+            this.Visible = false;
+            interfazPrincipal.Show();
+
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
