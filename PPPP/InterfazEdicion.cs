@@ -47,9 +47,6 @@ namespace PPPP
             Bitmap CroppedImage = CropImage(source, rectOrig);
 
         }
-
-
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
