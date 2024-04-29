@@ -36,7 +36,10 @@ namespace PPPP
 
         private void BitmapRecortar()
         {
-            Bitmap source = new Bitmap(@"C:\imagen1.);
+            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
+            Bitmap source = new Bitmap(openFileDialog1.FileName);
+
+
             Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
 
             Bitmap CroppedImage = CropImage(source, rectOrig);
