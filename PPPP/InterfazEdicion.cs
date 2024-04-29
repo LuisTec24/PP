@@ -34,6 +34,8 @@ namespace PPPP
             pnPrevisualizacion.Controls.Add(pictureBox);// Agrega el PictureBox al panel
         }
 
+
+
         private void BitmapRecortar()
         {
             Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
