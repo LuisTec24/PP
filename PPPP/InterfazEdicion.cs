@@ -18,7 +18,7 @@ namespace PPPP
 
 
             //Como
-            // SIUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+            // SIUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUSDSDSDSDSDSD
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
