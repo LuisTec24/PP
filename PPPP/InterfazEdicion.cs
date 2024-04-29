@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,37 @@ namespace PPPP
 {
     public partial class InterfazEdicion : Form
     {
+        public StreamReader lector;
         public InterfazEdicion()
         {
+
             InitializeComponent();
+            openFileDialog1.ShowDialog(this);
+            AbrirImagen(); // SELECCIONAR IMAGEN AL ABRIR LA VENTANA
 
-
-            //Como
-            // SIUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUSDSDSDSDSDSD
         }
+
+        private void AbrirImagen()
+        {
+            
+            lector = new StreamReader(openFileDialog1.FileName);
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Size = pnPrevisualizacion.Size; // Tamaño de la imagen dentro del panel
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Escala la imagen para ajustarse al PictureBox
+            pictureBox.Image = Image.FromFile(openFileDialog1.FileName); // Carga la imagen
+            pnPrevisualizacion.Controls.Add(pictureBox);// Agrega el PictureBox al panel
+        }
+
+        private void BitmapRecortar()
+        {
+            Bitmap source = new Bitmap(@"C:\imagen1.);
+            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
+
+            Bitmap CroppedImage = CropImage(source, rectOrig);
+
+        }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -53,7 +77,7 @@ namespace PPPP
 
             // Mostrar el nuevo formulario
             this.Visible = false;
-            interfazPrincipal.Show();
+            //interfazPrincipal.Show();
 
 
         }
