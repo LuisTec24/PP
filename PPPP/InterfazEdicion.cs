@@ -42,7 +42,7 @@ namespace PPPP
             Bitmap source = new Bitmap(openFileDialog1.FileName);
 
 
-            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
+            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altukra);
 
             Bitmap CroppedImage = CropImage(source, rectOrig);
 
