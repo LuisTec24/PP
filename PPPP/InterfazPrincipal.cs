@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace PPPP
 {
     public partial class InterfazPrincipal : Form
     {
+        int TipoH=null;
         public InterfazPrincipal()
         {
             InitializeComponent();
@@ -19,6 +21,16 @@ namespace PPPP
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            openFileDialog1.ShowDialog();
+            try
+            {
+                StreamReader lector = new StreamReader(openFileDialog1.FileName);
+            }
+            catch { 
+            
+            }
+
 
         }
 
@@ -29,6 +41,8 @@ namespace PPPP
             // Mostrar el nuevo formulario
             this.Visible=false;
             interfazEdicion.Show();
+
+            TipoH = 1;
 
         }
 
@@ -41,5 +55,18 @@ namespace PPPP
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            TipoH = 2;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            TipoH = 3;
+        }
+
+
+
     }
 }
