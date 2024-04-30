@@ -44,7 +44,7 @@ namespace PPPP
 
             Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altukra);
 
-            Bitmap CroppedImage = CropImage(source, rectOrig);
+            Bitmap CroppedImage = CropImage(source, rectOrig);hh
 
         }
         */
