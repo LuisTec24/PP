@@ -36,7 +36,7 @@ namespace PPPP
 
 
 
-        private void BitmapRecortar()
+        /*private void BitmapRecortar()
         {
             Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
             Bitmap source = new Bitmap(openFileDialog1.FileName);
@@ -47,6 +47,7 @@ namespace PPPP
             Bitmap CroppedImage = CropImage(source, rectOrig);
 
         }
+        */
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
