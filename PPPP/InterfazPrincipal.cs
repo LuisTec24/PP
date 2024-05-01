@@ -13,7 +13,9 @@ namespace PPPP
 {
     public partial class InterfazPrincipal : Form
     {
-        int TipoH=null;
+        int TipoH;
+        
+
         public InterfazPrincipal()
         {
             InitializeComponent();
@@ -36,13 +38,16 @@ namespace PPPP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
-
             // Mostrar el nuevo formulario
-            this.Visible=false;
-            interfazEdicion.Show();
-
             TipoH = 1;
+            
+            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            interfazEdicion.TPHoja(TipoH);
+            interfazEdicion.Show();
+            
+            this.Visible=false;
+            
+
 
         }
 
@@ -59,6 +64,16 @@ namespace PPPP
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             TipoH = 2;
+            // Mostrar el nuevo formulario
+            
+
+            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            interfazEdicion.TPHoja(TipoH);
+            interfazEdicion.Show();
+
+            this.Visible = false;
+
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
