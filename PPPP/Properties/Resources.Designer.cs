@@ -63,6 +63,46 @@ namespace PPPP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boton_para_acercar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("boton-para-acercar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa_con_signo_menos {
+            get {
+                object obj = ResourceManager.GetObject("lupa-con-signo-menos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa_con_signo_menos__1_ {
+            get {
+                object obj = ResourceManager.GetObject("lupa-con-signo-menos (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa_con_signo_menos__2_ {
+            get {
+                object obj = ResourceManager.GetObject("lupa-con-signo-menos (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap q1 {
             get {
                 object obj = ResourceManager.GetObject("q1", resourceCulture);

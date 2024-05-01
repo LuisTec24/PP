@@ -16,7 +16,7 @@ namespace PPPP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new InterfazEdicion());
+           Application.Run(new InterfazPrincipal());
         }
     }
 }

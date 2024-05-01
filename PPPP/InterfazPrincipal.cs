@@ -79,6 +79,14 @@ namespace PPPP
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             TipoH = 3;
+
+            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            interfazEdicion.TPHoja(TipoH);
+            interfazEdicion.Show();
+
+            this.Visible = false;
+
+
         }
 
 

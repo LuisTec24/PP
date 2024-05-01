@@ -92,5 +92,17 @@
   <ItemGroup>
     <None Include="Resources\q1.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa-con-signo-menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa-con-signo-menos %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa-con-signo-menos %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-para-acercar %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
