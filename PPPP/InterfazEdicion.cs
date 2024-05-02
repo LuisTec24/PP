@@ -188,25 +188,30 @@ namespace PPPP
             }
 
         }
-        /*
-        private void Hoja_SizeChanged(object sender, EventArgs e)
-        {
-            // Obtener el nuevo tamaño de la hoja
-            
-// Recorrer todos los PictureBox hijos de la hoja
-            foreach (Control control in Hoja.Controls)
-            {
-                if (control is PictureBox pictureBox)
-                {
-                    // Ajustar el tamaño del PictureBox hijo al nuevo tamaño de la hoja
-                    int nuevoAncho = (int)(Hoja.Width / 1.1);
-                    int nuevoAlto = (int)(Hoja.Height / 1.1);
-                    Hoja.ClientSize = new Size(nuevoAncho, nuevoAlto);
-                }
-            }
 
-        
-        }*/
+        private void label2_Click(object sender, EventArgs e)
+        {
+            //HO
+        }
+        /*
+private void Hoja_SizeChanged(object sender, EventArgs e)
+{
+   // Obtener el nuevo tamaño de la hoja
+
+// Recorrer todos los PictureBox hijos de la hoja
+   foreach (Control control in Hoja.Controls)
+   {
+       if (control is PictureBox pictureBox)
+       {
+           // Ajustar el tamaño del PictureBox hijo al nuevo tamaño de la hoja
+           int nuevoAncho = (int)(Hoja.Width / 1.1);
+           int nuevoAlto = (int)(Hoja.Height / 1.1);
+           Hoja.ClientSize = new Size(nuevoAncho, nuevoAlto);
+       }
+   }
+
+
+}*/
 
 
 

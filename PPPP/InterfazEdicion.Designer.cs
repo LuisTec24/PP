@@ -205,6 +205,7 @@
             this.label2.Size = new System.Drawing.Size(239, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Numero de Copias";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Acercar
             // 
