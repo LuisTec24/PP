@@ -191,7 +191,7 @@ namespace PPPP
 
         private void label2_Click(object sender, EventArgs e)
         {
-            //HO
+      
         }
         /*
 private void Hoja_SizeChanged(object sender, EventArgs e)

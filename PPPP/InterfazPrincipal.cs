@@ -89,7 +89,14 @@ namespace PPPP
 
         }
 
+        private void InterfazPrincipal_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
