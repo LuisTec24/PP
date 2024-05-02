@@ -93,8 +93,14 @@ namespace PPPP
                     tamañoHoja = new Size(2480 , 3508); // Tamaño en píxeles (ancho x alto)
                     break;
 
+                // ------------------- 01/05/24 -----------------------------------------------
+                case 4:
+                    tamañoHoja = new Size(3508, 4961);
+                    break;
 
-
+                case 5:
+                    tamañoHoja = new Size(5100, 6600);
+                    break;
 
 
                 default:
@@ -168,6 +174,11 @@ namespace PPPP
         {
             Hoja.Controls.Clear();
 
+            int hojaAncho = Hoja.Width; // Ancho del contenedor Hoja
+            int maxImagenesPorLinea = hojaAncho / 120; // Calcula cuántas imágenes pueden caber en una línea
+            int posX = 0; // Posición horizontal inicial
+            int posY = 0; // Posición vertical inicial
+
             for (int i = 0; i < nC; i++)
             {
                 // Crear un nuevo PictureBox para la imagen
@@ -176,15 +187,25 @@ namespace PPPP
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; // Escalar la imagen para ajustarse al PictureBox
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName); // Cargar la imagen desde el archivo seleccionado
 
+                pictureBox1.Location = new Point(posX, posY);
                 // Calcular la posición en la hoja para cada imagen
-                int posX = i * 120; // Ajusta el valor según el espacio que quieras dejar entre cada imagen
-                int posY = 0; // Ajusta la posición vertical según tu diseño
+                //int posX = i * 120; // Ajusta el valor según el espacio que quieras dejar entre cada imagen
+                //int posY = 0; // Ajusta la posición vertical según tu diseño
 
                 // Establecer la posición del PictureBox en la hoja
                 pictureBox1.Location = new Point(posX, posY);
 
                 // Agregar el PictureBox al PictureBox de la hoja
                 Hoja.Controls.Add(pictureBox1);
+
+                posX += 120; // Mueve la posición horizontal para la próxima imagen
+
+                // Si llegamos al final de la línea, salta a la siguiente línea
+                if ((i + 1) % maxImagenesPorLinea == 0)
+                {
+                    posX = 0; // Reinicia la posición horizontal
+                    posY += 120; // Mueve la posición vertical para la próxima línea
+                }
             }
 
         }
@@ -193,22 +214,27 @@ namespace PPPP
         {
       
         }
+
+        private void pnPrevisualizacion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
         /*
 private void Hoja_SizeChanged(object sender, EventArgs e)
 {
-   // Obtener el nuevo tamaño de la hoja
+// Obtener el nuevo tamaño de la hoja
 
 // Recorrer todos los PictureBox hijos de la hoja
-   foreach (Control control in Hoja.Controls)
-   {
-       if (control is PictureBox pictureBox)
-       {
-           // Ajustar el tamaño del PictureBox hijo al nuevo tamaño de la hoja
-           int nuevoAncho = (int)(Hoja.Width / 1.1);
-           int nuevoAlto = (int)(Hoja.Height / 1.1);
-           Hoja.ClientSize = new Size(nuevoAncho, nuevoAlto);
-       }
-   }
+foreach (Control control in Hoja.Controls)
+{
+if (control is PictureBox pictureBox)
+{
+  // Ajustar el tamaño del PictureBox hijo al nuevo tamaño de la hoja
+  int nuevoAncho = (int)(Hoja.Width / 1.1);
+  int nuevoAlto = (int)(Hoja.Height / 1.1);
+  Hoja.ClientSize = new Size(nuevoAncho, nuevoAlto);
+}
+}
 
 
 }*/

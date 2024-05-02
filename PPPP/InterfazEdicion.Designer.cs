@@ -58,6 +58,7 @@
             this.pnPrevisualizacion.Name = "pnPrevisualizacion";
             this.pnPrevisualizacion.Size = new System.Drawing.Size(445, 356);
             this.pnPrevisualizacion.TabIndex = 0;
+            this.pnPrevisualizacion.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPrevisualizacion_Paint);
             // 
             // btnGuardar
             // 

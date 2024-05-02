@@ -83,6 +83,36 @@ namespace PPPP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HojaTamañoA2 {
+            get {
+                object obj = ResourceManager.GetObject("HojaTamañoA2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HojaTamañoCarta2 {
+            get {
+                object obj = ResourceManager.GetObject("HojaTamañoCarta2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HojaTamañoOficio2 {
+            get {
+                object obj = ResourceManager.GetObject("HojaTamañoOficio2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lupa_con_signo_menos {
             get {
                 object obj = ResourceManager.GetObject("lupa-con-signo-menos", resourceCulture);
@@ -116,6 +146,16 @@ namespace PPPP.Properties {
         internal static System.Drawing.Bitmap q1 {
             get {
                 object obj = ResourceManager.GetObject("q1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TamañoHojaA3 {
+            get {
+                object obj = ResourceManager.GetObject("TamañoHojaA3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -58,6 +58,7 @@
     <Compile Include="InterfazEdicion.Designer.cs">
       <DependentUpon>InterfazEdicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InterfazEdicion.resx">
@@ -106,6 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HojaTabloide2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HojaTamañoCarta2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HojaTamañoOficio2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HojaTamañoA2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TamañoHojaA3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

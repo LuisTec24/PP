@@ -19,6 +19,10 @@ namespace PPPP
         public InterfazPrincipal()
         {
             InitializeComponent();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            //pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,11 +83,9 @@ namespace PPPP
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             TipoH = 3;
-
             InterfazEdicion interfazEdicion = new InterfazEdicion();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
-
             this.Visible = false;
 
 
@@ -102,6 +104,24 @@ namespace PPPP
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            TipoH = 4;
+            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            interfazEdicion.TPHoja(TipoH);
+            interfazEdicion.Show();
+            this.Visible = false;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            TipoH = 5;
+            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            interfazEdicion.TPHoja(TipoH);
+            interfazEdicion.Show();
+            this.Visible = false;
         }
     }
 }
