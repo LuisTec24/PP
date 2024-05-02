@@ -73,6 +73,16 @@ namespace PPPP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HojaTabloide2 {
+            get {
+                object obj = ResourceManager.GetObject("HojaTabloide2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lupa_con_signo_menos {
             get {
                 object obj = ResourceManager.GetObject("lupa-con-signo-menos", resourceCulture);

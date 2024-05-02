@@ -115,7 +115,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PPPP.Properties.Resources.q1;
+            this.pictureBox2.Image = global::PPPP.Properties.Resources.HojaTabloide2;
             this.pictureBox2.Location = new System.Drawing.Point(288, 75);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 116);
