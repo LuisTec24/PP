@@ -68,6 +68,7 @@
             this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -192,9 +193,9 @@
             // 
             this.PanelPre.AutoScroll = true;
             this.PanelPre.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.PanelPre.Location = new System.Drawing.Point(720, 47);
+            this.PanelPre.Location = new System.Drawing.Point(731, 47);
             this.PanelPre.Name = "PanelPre";
-            this.PanelPre.Size = new System.Drawing.Size(724, 647);
+            this.PanelPre.Size = new System.Drawing.Size(489, 392);
             this.PanelPre.TabIndex = 9;
             // 
             // label2
@@ -212,7 +213,7 @@
             // 
             this.Acercar.BackgroundImage = global::PPPP.Properties.Resources.boton_para_acercar__1_;
             this.Acercar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Acercar.Location = new System.Drawing.Point(1086, 700);
+            this.Acercar.Location = new System.Drawing.Point(936, 518);
             this.Acercar.Name = "Acercar";
             this.Acercar.Size = new System.Drawing.Size(70, 70);
             this.Acercar.TabIndex = 7;
@@ -223,7 +224,7 @@
             // 
             this.Alejar.BackgroundImage = global::PPPP.Properties.Resources.lupa_con_signo_menos__2_;
             this.Alejar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Alejar.Location = new System.Drawing.Point(857, 700);
+            this.Alejar.Location = new System.Drawing.Point(801, 514);
             this.Alejar.Name = "Alejar";
             this.Alejar.Size = new System.Drawing.Size(70, 70);
             this.Alejar.TabIndex = 6;
@@ -235,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1465, 793);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.Acercar);
             this.Controls.Add(this.Alejar);
             this.Controls.Add(this.label2);

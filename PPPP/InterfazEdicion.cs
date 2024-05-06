@@ -8,6 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using iText.IO.Image;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+
+using System.Drawing.Imaging;
+
 
 namespace PPPP
 {
@@ -16,6 +24,7 @@ namespace PPPP
         public StreamReader lector;
         PictureBox Hoja;
         int NC;
+        double zoomFactor = 1.0;
 
         public InterfazEdicion()
         {
@@ -34,7 +43,7 @@ namespace PPPP
             PictureBox pictureBox = new PictureBox();
             pictureBox.Size = pnPrevisualizacion.Size; // Tamaño de la imagen dentro del panel
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Escala la imagen para ajustarse al PictureBox
-            pictureBox.Image = Image.FromFile(openFileDialog1.FileName); // Carga la imagen
+            pictureBox.Image = System.Drawing.Image.FromFile(openFileDialog1.FileName); // Carga la imagen
             pnPrevisualizacion.Controls.Add(pictureBox);// Agrega el PictureBox al panel
             
             }
@@ -43,21 +52,6 @@ namespace PPPP
             }
         }
 
-
-
-        /*private void BitmapRecortar()
-        {
-            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altura);
-            Bitmap source = new Bitmap(openFileDialog1.FileName);
-
-
-            Rectangle rectOrig = new Rectangle(posXmin, posYmin, anchura, altukra);
-
-            Bitmap CroppedImage = CropImage(source, rectOrig);hh
-
-        }
-        */
-        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -146,8 +140,8 @@ namespace PPPP
         private void ZoomOut(PictureBox pictureBox)
         {
             Size tamañoActual = pictureBox.ClientSize;
-            int nuevoAncho = (int)(tamañoActual.Width / 1.1);
-            int nuevoAlto = (int)(tamañoActual.Height / 1.1);
+            int nuevoAncho = (int)(tamañoActual.Width / (1.1 * zoomFactor)); // Reducir el ancho en función del factor de zoom
+            int nuevoAlto = (int)(tamañoActual.Height / (1.1 * zoomFactor)); // Reducir el alto en función del factor de zoom
             pictureBox.ClientSize = new Size(nuevoAncho, nuevoAlto);
         }
 
@@ -160,17 +154,18 @@ namespace PPPP
         private void btnZoomOut_Click(object sender, EventArgs e)
         {
             ZoomOut(Hoja);
+
         }
 //
         
         private void NCopias_ValueChanged(object sender, EventArgs e)
         {
             NC = (int)NCopias.Value;
-            AgrImgHoj(NC);
+            AgrImgHoj(NC,zoomFactor);
                 
         }
 
-        private void AgrImgHoj(int nC)
+        private void AgrImgHoj(int nC, double zoomFactor)
         {
             Hoja.Controls.Clear();
 
@@ -183,31 +178,30 @@ namespace PPPP
             {
                 // Crear un nuevo PictureBox para la imagen
                 PictureBox pictureBox1 = new PictureBox();
-                pictureBox1.Size = new Size(100, 100); // Tamaño de la imagen dentro del panel
+
+                // Tamaño proporcional de la imagen en función del factor de zoom
+                int nuevoAncho = (int)(100 * zoomFactor);
+                int nuevoAlto = (int)(100 * zoomFactor);
+                pictureBox1.Size = new Size(nuevoAncho, nuevoAlto);
+
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; // Escalar la imagen para ajustarse al PictureBox
-                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName); // Cargar la imagen desde el archivo seleccionado
+                pictureBox1.Image = System.Drawing.Image.FromFile(openFileDialog1.FileName); // Cargar la imagen desde el archivo seleccionado
 
-                pictureBox1.Location = new Point(posX, posY);
-                // Calcular la posición en la hoja para cada imagen
-                //int posX = i * 120; // Ajusta el valor según el espacio que quieras dejar entre cada imagen
-                //int posY = 0; // Ajusta la posición vertical según tu diseño
-
-                // Establecer la posición del PictureBox en la hoja
-                pictureBox1.Location = new Point(posX, posY);
+                pictureBox1.Location = new Point(posX, posY); // Establecer la posición del PictureBox en la hoja
 
                 // Agregar el PictureBox al PictureBox de la hoja
                 Hoja.Controls.Add(pictureBox1);
 
-                posX += 120; // Mueve la posición horizontal para la próxima imagen
+                posX += nuevoAncho + 20; // Mueve la posición horizontal para la próxima imagen (considerando un margen de 20 píxeles entre imágenes)
 
                 // Si llegamos al final de la línea, salta a la siguiente línea
                 if ((i + 1) % maxImagenesPorLinea == 0)
                 {
                     posX = 0; // Reinicia la posición horizontal
-                    posY += 120; // Mueve la posición vertical para la próxima línea
+                    posY += nuevoAlto + 20; // Mueve la posición vertical para la próxima línea (considerando un margen de 20 píxeles entre líneas)
                 }
             }
-
+        
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -219,28 +213,82 @@ namespace PPPP
         {
 
         }
-        /*
-private void Hoja_SizeChanged(object sender, EventArgs e)
-{
-// Obtener el nuevo tamaño de la hoja
 
-// Recorrer todos los PictureBox hijos de la hoja
-foreach (Control control in Hoja.Controls)
-{
-if (control is PictureBox pictureBox)
-{
-  // Ajustar el tamaño del PictureBox hijo al nuevo tamaño de la hoja
-  int nuevoAncho = (int)(Hoja.Width / 1.1);
-  int nuevoAlto = (int)(Hoja.Height / 1.1);
-  Hoja.ClientSize = new Size(nuevoAncho, nuevoAlto);
-}
-}
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            // Crear un bitmap del tamaño del PictureBox
+            Bitmap bmp = new Bitmap(Hoja.Width, Hoja.Height);
+
+            // Dibujar el contenido del PictureBox en el bitmap
+            Hoja.DrawToBitmap(bmp, new Rectangle(0, 0, Hoja.Width, Hoja.Height));
+
+            // Crear un cuadro de diálogo para guardar archivo
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de imagen (*.jpg)|*.jpg|Documentos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+            saveFileDialog.Title = "Guardar como";
+
+            // Si el usuario selecciona una ruta y hace clic en "Guardar"
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Guardar en formato PDF
+                if (Path.GetExtension(saveFileDialog.FileName).ToLower() == ".pdf")
+                {
+                    using (PdfWriter writer = new PdfWriter(saveFileDialog.FileName))
+                    {
+                        using (PdfDocument pdf = new PdfDocument(writer))
+                        {
+                            Document document = new Document(pdf);
+                            iText.Layout.Element.Image img = new iText.Layout.Element.Image(ImageDataFactory.Create(bmp, null));
+                            document.Add(img);
+                        }
+                    }
+                    MessageBox.Show("La hoja se ha guardado correctamente en formato PDF.");
+                }
+                // Guardar en formato JPG
+                else
+                {
+                    bmp.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
+                    MessageBox.Show("La hoja se ha guardado correctamente en formato JPG.");
+                }
+            }
+
+            // Liberar los recursos del bitmap
+            bmp.Dispose();
 
 
-}*/
 
 
 
+
+
+
+
+
+
+
+
+            /*
+            // Crear un bitmap del tamaño del PictureBox
+            Bitmap bmp = new Bitmap(Hoja.Width, Hoja.Height);
+
+            // Dibujar el contenido del PictureBox en el bitmap
+            Hoja.DrawToBitmap(bmp, new Rectangle(0, 0, Hoja.Width, Hoja.Height));
+
+            // Crear un cuadro de diálogo para guardar archivo
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de imagen (*.jpg)|*.jpg|Todos los archivos (*.*)|*.*";
+            saveFileDialog.Title = "Guardar como";
+
+            // Si el usuario selecciona una ruta y hace clic en "Guardar"
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Guardar el bitmap en la ruta seleccionada por el usuario
+                bmp.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                MessageBox.Show("La hoja se ha guardado correctamente.");
+            }
+
+            */
+        }
     }
 
 }
