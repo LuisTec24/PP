@@ -170,19 +170,21 @@ namespace PPPP
             Hoja.Controls.Clear();
 
             int hojaAncho = Hoja.Width; // Ancho del contenedor Hoja
-            int maxImagenesPorLinea = hojaAncho / 120; // Calcula cuántas imágenes pueden caber en una línea
+            int maxImagenesPorLinea = hojaAncho / (100 + 20); // Calcula cuántas imágenes pueden caber en una línea
             int posX = 0; // Posición horizontal inicial
             int posY = 0; // Posición vertical inicial
+
+            // Calcula el tamaño proporcional de las imágenes basado en el número de imágenes por línea
+            int imagenAncho = (hojaAncho - 20 * (maxImagenesPorLinea - 1)) / maxImagenesPorLinea; // Ancho de la imagen con margen
+            int imagenAlto = imagenAncho; // Altura de la imagen igual al ancho
 
             for (int i = 0; i < nC; i++)
             {
                 // Crear un nuevo PictureBox para la imagen
                 PictureBox pictureBox1 = new PictureBox();
 
-                // Tamaño proporcional de la imagen en función del factor de zoom
-                int nuevoAncho = (int)(100 * zoomFactor);
-                int nuevoAlto = (int)(100 * zoomFactor);
-                pictureBox1.Size = new Size(nuevoAncho, nuevoAlto);
+                // Establecer el tamaño de la imagen
+                pictureBox1.Size = new Size(imagenAncho, imagenAlto);
 
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; // Escalar la imagen para ajustarse al PictureBox
                 pictureBox1.Image = System.Drawing.Image.FromFile(openFileDialog1.FileName); // Cargar la imagen desde el archivo seleccionado
@@ -192,17 +194,16 @@ namespace PPPP
                 // Agregar el PictureBox al PictureBox de la hoja
                 Hoja.Controls.Add(pictureBox1);
 
-                posX += nuevoAncho + 20; // Mueve la posición horizontal para la próxima imagen (considerando un margen de 20 píxeles entre imágenes)
+                posX += imagenAncho + 20; // Mueve la posición horizontal para la próxima imagen (considerando un margen de 20 píxeles entre imágenes)
 
                 // Si llegamos al final de la línea, salta a la siguiente línea
                 if ((i + 1) % maxImagenesPorLinea == 0)
                 {
                     posX = 0; // Reinicia la posición horizontal
-                    posY += nuevoAlto + 20; // Mueve la posición vertical para la próxima línea (considerando un margen de 20 píxeles entre líneas)
+                    posY += imagenAlto + 20; // Mueve la posición vertical para la próxima línea (considerando un margen de 20 píxeles entre líneas)
                 }
             }
-        
-        }
+            }
 
         private void label2_Click(object sender, EventArgs e)
         {
