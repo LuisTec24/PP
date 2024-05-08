@@ -1,6 +1,6 @@
 ﻿namespace PPPP
 {
-    partial class InterfazPrincipal
+    partial class InterfazPrincipal1
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace PPPP
 {
-    partial class InterfazEdicion
+    partial class InterfazEdicion1
     {
         /// <summary>
         /// Variable del diseñador necesaria.

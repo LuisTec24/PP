@@ -19,14 +19,14 @@ using System.Drawing.Imaging;
 
 namespace PPPP
 {
-    public partial class InterfazEdicion : Form
+    public partial class InterfazEdicion1 : Form
     {
         public StreamReader lector;
         PictureBox Hoja;
         int NC;
         double zoomFactor = 1.0;
 
-        public InterfazEdicion()
+        public InterfazEdicion1()
         {
 
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace PPPP
         private void btnSalir_Click(object sender, EventArgs e)
         {
 
-            InterfazPrincipal interfazPrincipal=new InterfazPrincipal();
+            InterfazPrincipal1 interfazPrincipal=new InterfazPrincipal1();
 
             // Mostrar el nuevo formulario
             this.Visible = false;

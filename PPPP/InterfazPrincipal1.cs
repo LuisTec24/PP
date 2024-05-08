@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace PPPP
 {
-    public partial class InterfazPrincipal : Form
+    public partial class InterfazPrincipal1 : Form
     {
         int TipoH;
         
 
-        public InterfazPrincipal()
+        public InterfazPrincipal1()
         {
             InitializeComponent();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -45,7 +45,7 @@ namespace PPPP
             // Mostrar el nuevo formulario
             TipoH = 1;
             
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            InterfazEdicion1 interfazEdicion = new InterfazEdicion1();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
             
@@ -71,7 +71,7 @@ namespace PPPP
             // Mostrar el nuevo formulario
             
 
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            InterfazEdicion1 interfazEdicion = new InterfazEdicion1();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
 
@@ -83,7 +83,7 @@ namespace PPPP
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             TipoH = 3;
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            InterfazEdicion1 interfazEdicion = new InterfazEdicion1();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
             this.Visible = false;
@@ -109,7 +109,7 @@ namespace PPPP
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             TipoH = 4;
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            InterfazEdicion1 interfazEdicion = new InterfazEdicion1();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
             this.Visible = false;
@@ -118,7 +118,7 @@ namespace PPPP
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             TipoH = 5;
-            InterfazEdicion interfazEdicion = new InterfazEdicion();
+            InterfazEdicion1 interfazEdicion = new InterfazEdicion1();
             interfazEdicion.TPHoja(TipoH);
             interfazEdicion.Show();
             this.Visible = false;
