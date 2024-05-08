@@ -56,7 +56,7 @@
             this.pnPrevisualizacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnPrevisualizacion.Location = new System.Drawing.Point(229, 47);
             this.pnPrevisualizacion.Name = "pnPrevisualizacion";
-            this.pnPrevisualizacion.Size = new System.Drawing.Size(445, 356);
+            this.pnPrevisualizacion.Size = new System.Drawing.Size(455, 356);
             this.pnPrevisualizacion.TabIndex = 0;
             this.pnPrevisualizacion.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPrevisualizacion_Paint);
             // 
@@ -212,7 +212,6 @@
             // Acercar
             // 
             this.Acercar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-
             this.Acercar.Location = new System.Drawing.Point(936, 518);
             this.Acercar.Name = "Acercar";
             this.Acercar.Size = new System.Drawing.Size(70, 70);
@@ -223,7 +222,6 @@
             // Alejar
             // 
             this.Alejar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-
             this.Alejar.Location = new System.Drawing.Point(801, 514);
             this.Alejar.Name = "Alejar";
             this.Alejar.Size = new System.Drawing.Size(70, 70);
