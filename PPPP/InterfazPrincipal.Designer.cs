@@ -222,7 +222,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::PPPP.Properties.Resources.TamañoHojaA3;
+
             this.pictureBox6.Location = new System.Drawing.Point(57, 265);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 116);
@@ -232,7 +232,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::PPPP.Properties.Resources.HojaTabloide2;
+
             this.pictureBox5.Location = new System.Drawing.Point(288, 265);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 116);
@@ -250,7 +250,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PPPP.Properties.Resources.HojaTamañoA2;
+
             this.pictureBox3.Location = new System.Drawing.Point(540, 75);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 116);
@@ -260,7 +260,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PPPP.Properties.Resources.HojaTamañoOficio2;
+
             this.pictureBox2.Location = new System.Drawing.Point(288, 75);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 116);
@@ -270,7 +270,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PPPP.Properties.Resources.HojaTamañoCarta2;
+
             this.pictureBox1.Location = new System.Drawing.Point(57, 75);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 116);

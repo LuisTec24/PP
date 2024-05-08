@@ -196,34 +196,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\q1.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa-con-signo-menos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa-con-signo-menos %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa-con-signo-menos %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\boton-para-acercar %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HojaTabloide2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HojaTamañoCarta2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HojaTamañoOficio2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HojaTamañoA2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TamañoHojaA3.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
