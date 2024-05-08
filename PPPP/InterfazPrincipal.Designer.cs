@@ -222,6 +222,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Image = global::PPPP.Properties.Resources.TamañoHojaA3;
             this.pictureBox6.Location = new System.Drawing.Point(57, 265);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 116);
